@@ -40,20 +40,6 @@ ListNode* GetListFromInput(ListNode** ppHead, int count)
     return pTail;
 }
 
-void PrintList(ListNode* pHead)
-{
-    std::cout << pHead->data;
-    pHead = pHead->next;
-
-    while (pHead != nullptr)
-    {
-        std::cout << ", " << pHead->data;
-        pHead = pHead->next;
-    }
-
-    std::cout << std::endl;
-}
-
 void FreeList(ListNode* pNode)
 {
     if (pNode == nullptr)
@@ -112,5 +98,6 @@ int main()
         PrintList(pOriginalHead);
 
         std::cout << "The middle element of the linked list is: " << GetMiddleElementOfLinkedList(pOriginalHead) << std::endl;
+        FreeList(pOriginalHead);
     }
 }
