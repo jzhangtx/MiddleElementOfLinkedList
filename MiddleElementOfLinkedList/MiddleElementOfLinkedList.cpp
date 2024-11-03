@@ -40,6 +40,20 @@ ListNode* GetListFromInput(ListNode** ppHead, int count)
     return pTail;
 }
 
+void PrintList(ListNode* pHead)
+{
+    std::cout << pHead->data;
+    pHead = pHead->next;
+
+    while (pHead != nullptr)
+    {
+        std::cout << ", " << pHead->data;
+        pHead = pHead->next;
+    }
+
+    std::cout << std::endl;
+}
+
 void FreeList(ListNode* pNode)
 {
     if (pNode == nullptr)
